@@ -5,7 +5,7 @@
 
 
 # For beta versions: `pip install --pre -U "weaviate-client==4.*"`
-get_ipython().system('pip install -U weaviate-client')
+#get_ipython().system('pip install -U weaviate-client')
 
 
 # In[2]:
@@ -431,10 +431,11 @@ for sent in sentences:
 # In[22]:
 
 
-get_ipython().system('pip install streamlit')
+#get_ipython().system('pip install streamlit')
 
 
 # In[23]:
 
 
-get_ipython().system("python '/data/streamlit_app_terzine_3.py'")
+#get_ipython().system("python '/data/streamlit_app_terzine_3.py'")
+'/data/streamlit_app_terzine_3.py'
