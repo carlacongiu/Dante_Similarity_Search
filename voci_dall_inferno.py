@@ -11,6 +11,7 @@ Original file is located at
 #pip install -U weaviate-client
 
 import pandas as pd
+import sentence_transformers
 from sentence_transformers import SentenceTransformer
 import weaviate
 from weaviate.classes.init import Auth
@@ -19,14 +20,14 @@ from weaviate.collections.classes.filters import Filter
 from tqdm import tqdm
 from typing_extensions import Annotated, deprecated
 
-from google.colab import drive
-drive.mount('/content/drive')
+#from google.colab import drive
+#drive.mount('/content/drive')
 
-file_path = '/content/drive/MyDrive/Colab_Notebooks/terzine.csv'
+file_path = '/data/terzine.csv'
 df = pd.read_csv(file_path, delimiter=';')
 df
 
-"""# Nuova sezione"""
+
 
 #model = SentenceTransformer('sentence-transformers/LaBSE')
 model = SentenceTransformer('sentence-transformers/all-mpnet-base-v2')
@@ -36,7 +37,7 @@ df["embedding"] = list(embeddings)
 
 df
 
-df.to_parquet('/content/drive/MyDrive/Colab_Notebooks/data/terzine_vectors.parquet')
+df.to_parquet('/data/terzine_vectors.parquet')
 
 df
 
@@ -352,13 +353,13 @@ for sent in sentences:
 
 #pip install streamlit
 
-python '/content/drive/MyDrive/Colab_Notebooks/streamlit_app_terzine_3.py'
+python '/data/streamlit_app_terzine_3.py'
 
-wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
-chmod +x cloudflared-linux-amd64
-mv cloudflared-linux-amd64 /usr/local/bin/cloudflared
+#wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+#chmod +x cloudflared-linux-amd64
+#mv cloudflared-linux-amd64 /usr/local/bin/cloudflared
 
-mkdir -p ~/.streamlit
+#mkdir -p ~/.streamlit
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile ~/.streamlit/config.toml
@@ -375,8 +376,8 @@ mkdir -p ~/.streamlit
 # COLLECTION_NAME = "Voci_dall_Inferno"
 #
 
-ls -la ~/.streamlit
+#ls -la ~/.streamlit
 
-streamlit run /content/drive/MyDrive/Colab_Notebooks/streamlit_app_terzine_3.py &>/dev/null &
+# run /content/drive/MyDrive/Colab_Notebooks/streamlit_app_terzine_3.py &>/dev/null &
 
-cloudflared tunnel --url http://localhost:8501
+#cloudflared tunnel --url http://localhost:8501
