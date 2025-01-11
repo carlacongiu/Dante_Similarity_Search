@@ -353,7 +353,7 @@ for sent in sentences:
 
 #pip install streamlit
 
-python data/streamlit_app_terzine_3.py
+python streamlit_app_terzine_3.py
 
 #wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 #chmod +x cloudflared-linux-amd64
