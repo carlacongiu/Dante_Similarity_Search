@@ -23,7 +23,7 @@ from typing_extensions import Annotated, deprecated
 #from google.colab import drive
 #drive.mount('/content/drive')
 
-file_path = '/data/terzine.csv'
+file_path = 'data/terzine.csv'
 df = pd.read_csv(file_path, delimiter=';')
 df
 
@@ -37,7 +37,7 @@ df["embedding"] = list(embeddings)
 
 df
 
-df.to_parquet('/data/terzine_vectors.parquet')
+df.to_parquet('data/terzine_vectors.parquet')
 
 df
 
@@ -353,7 +353,7 @@ for sent in sentences:
 
 #pip install streamlit
 
-python '/data/streamlit_app_terzine_3.py'
+python 'data/streamlit_app_terzine_3.py'
 
 #wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 #chmod +x cloudflared-linux-amd64
