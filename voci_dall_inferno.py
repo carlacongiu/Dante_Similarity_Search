@@ -13,6 +13,7 @@ get_ipython().system('pip install sentence_transformers')
 
 
 import pandas as pd
+import sentence_transformers
 from sentence_transformers import SentenceTransformer
 import weaviate
 from weaviate.classes.init import Auth
